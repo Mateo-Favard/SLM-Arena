@@ -1,0 +1,26 @@
+services:
+  core:
+    build:
+      context: .
+      dockerfile: core/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./replays:/app/replays
+      - ./logs:/app/logs
+      - ./videos:/app/videos
+      - ./data:/app/data
+    env_file:
+      - .env
+    environment:
+      - RENDER_SERVICE_URL=http://render:3000
+      - REPLAYS_DIR=/app/replays
+      - VIDEOS_DIR=/app/videos
+
+  render:
+    build: ./render
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./replays:/app/replays
+      - ./videos:/app/videos

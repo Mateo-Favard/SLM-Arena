@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #141416;
+  --surface: #1E1E22;
+  --border: #2A2A2E;
+  --text: #E0E0E0;
+  --text-muted: #707070;
+  --text-hint: #505050;
+  --cyan: #00F0FF;
+  --magenta: #FF3CAC;
+  --green: #34D399;
+  --yellow: #FBBF24;
+  --red: #F87171;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-brand {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+/* Form */
+.form-section {
+  margin-bottom: 32px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--cyan);
+}
+
+.form-group select option {
+  background: var(--surface);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--cyan);
+  color: var(--bg);
+}
+
+.btn-small {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+/* Match list */
+.match-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.match-players {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.match-players .p1 {
+  color: var(--cyan);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.match-players .vs {
+  color: var(--text-hint);
+  font-size: 12px;
+}
+
+.match-players .p2 {
+  color: var(--magenta);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.match-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.match-game {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-queued {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--yellow);
+}
+
+.badge-running {
+  background: rgba(0, 240, 255, 0.15);
+  color: var(--cyan);
+}
+
+.badge-completed {
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--green);
+}
+
+.badge-failed {
+  background: rgba(248, 113, 113, 0.15);
+  color: var(--red);
+}
+
+/* Search */
+.search-bar {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 16px;
+  transition: border-color 0.15s;
+}
+
+.search-bar:focus {
+  border-color: var(--cyan);
+}
+
+/* Leaderboard table */
+.lb-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lb-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.lb-table td {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.lb-table tr:last-child td {
+  border-bottom: none;
+}
+
+.lb-rank {
+  font-weight: 700;
+  color: var(--text-muted);
+  width: 40px;
+}
+
+.lb-model {
+  font-weight: 600;
+}
+
+.lb-elo {
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+.lb-record {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+/* Player config block in form */
+.player-config {
+  padding: 16px;
+  background: var(--bg);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.player-config-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.player-config-title.p1 { color: var(--cyan); }
+.player-config-title.p2 { color: var(--magenta); }
+
+/* Tabs for leaderboard */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  transition: all 0.15s;
+}
+
+.tab:hover {
+  border-color: var(--text-hint);
+}
+
+.tab.active {
+  background: var(--surface);
+  border-color: var(--cyan);
+  color: var(--text);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-hint);
+  padding: 40px;
+  font-size: 14px;
+}
