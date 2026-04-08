@@ -32,7 +32,7 @@ def build_text(replay: dict) -> str:
 
 
 async def generate(text: str, output: str) -> None:
-    comm = edge_tts.Communicate(text, VOICE)
+    comm = edge_tts.Communicate(text, VOICE, rate="+30%")
     await comm.save(output)
 
 
